@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors;
+    font-feature-settings: 'liga' 1, 'calt' 1;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors 
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50
+    disabled:pointer-events-none;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 focus-visible:ring-primary-500;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-600 text-white hover:bg-secondary-700 focus-visible:ring-secondary-500;
+  }
+  
+  .btn-accent {
+    @apply bg-accent-500 text-white hover:bg-accent-600 focus-visible:ring-accent-400;
+  }
+  
+  .btn-outline {
+    @apply border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800
+    shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+  
+  .form-input {
+    @apply w-full rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900
+    py-2 px-3 text-gray-900 dark:text-gray-100 shadow-sm focus:outline-none
+    focus:ring-2 focus:ring-primary-500 focus:border-primary-500;
+  }
+  
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1;
+  }
+  
+  .form-error {
+    @apply mt-1 text-sm text-red-600 dark:text-red-400;
+  }
+}
+
+/* Animations */
+.fade-in {
+  @apply animate-fadeIn;
+}
+
+.scale-up {
+  @apply animate-scaleUp;
+}
+
+.slide-up {
+  @apply animate-slideUp;
+}
+
+.hover-scale {
+  @apply transition-transform duration-200 hover:scale-105;
+}
+
+/* Gallery grid */
+.gallery-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4;
+}
+
+/* Photo card aspect ratio */
+.photo-card {
+  @apply relative overflow-hidden rounded-lg;
+  aspect-ratio: 3/2;
+}
+
+/* Utility for masking images */
+.image-mask {
+  @apply absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 
+  transition-opacity duration-300 hover:opacity-100;
+}
